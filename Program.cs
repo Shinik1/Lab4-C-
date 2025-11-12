@@ -23,7 +23,7 @@ class Program
                         List<int> numbers = new List<int>();
 
                     
-                        int elem = check.ReadInt("Введите количество элементов в списке");
+                        int elem = check.ReadInt("Введите количество элементов в списке ");
 
 
                         for (int i = 0; i < elem; i++)
@@ -56,8 +56,7 @@ class Program
                             int number = check.ReadInt($"Число {i + 1}: ");
                             list.AddLast(number);
                         }
-                        int count = check.ReadInt("Сколько работников? ");
-
+                 
                         List<HashSet<string>> workers = new List<HashSet<string>>();
                         // Вводим значение E
                         int E = check.ReadInt("Введите значение E: ");
@@ -78,6 +77,7 @@ class Program
                         {
                             Console.Write(num + " ");
                         }
+                        Console.WriteLine();
                         break;
                     }
                 case "3":
