@@ -8,8 +8,8 @@ class Program
     {
         while (true)
         {
-            
-            Console.WriteLine("Выберите номер задания (1,2,4,6)");
+            check check = new check();
+            Console.WriteLine("Выберите номер задания (1,2,3,4,6)");
             string taskNumber;
             taskNumber = Console.ReadLine();
 
@@ -22,23 +22,15 @@ class Program
                         // Создаем List 
                         List<int> numbers = new List<int>();
 
-                        Console.WriteLine("Введите количество элементов в списке");
-                        int elem = int.Parse(Console.ReadLine());
+                    
+                        int elem = check.ReadInt("Введите количество элементов в списке");
 
 
                         for (int i = 0; i < elem; i++)
                         {
-                            Console.Write($"Число {i + 1}: ");
-                            string input = Console.ReadLine();
+                            int input = check.ReadInt($"Число {i + 1}: ");
 
-                            // Проверяем, что введено число
-                            while (!int.TryParse(input, out int number))
-                            {
-                                Console.Write("Ошибка! Введите целое число: ");
-                                input = Console.ReadLine();
-                            }
-
-                            numbers.Add(int.Parse(input));
+                            numbers.Add(input);
                         }
 
                         // Выводим исходный список
@@ -61,14 +53,14 @@ class Program
                         Console.WriteLine("Введите 7 чисел:");
                         for (int i = 0; i < 7; i++)
                         {
-                            Console.Write($"Число {i + 1}: ");
-                            int number = int.Parse(Console.ReadLine());
+                            int number = check.ReadInt($"Число {i + 1}: ");
                             list.AddLast(number);
                         }
+                        int count = check.ReadInt("Сколько работников? ");
 
+                        List<HashSet<string>> workers = new List<HashSet<string>>();
                         // Вводим значение E
-                        Console.Write("Введите значение E: ");
-                        int E = int.Parse(Console.ReadLine());
+                        int E = check.ReadInt("Введите значение E: ");
 
                         // Выводим исходный список
                         Console.Write("\nИсходный список: ");
@@ -92,8 +84,8 @@ class Program
                     {
                         string[] allLanguages = { "Английский", "Немецкий", "Французский", "Испанский", "Китайский" };
 
-                        Console.Write("Сколько работников? ");
-                        int count = int.Parse(Console.ReadLine());
+                       
+                        int count = check.ReadInt("Сколько работников? ");
 
                         List<HashSet<string>> workers = new List<HashSet<string>>();
 

@@ -12,7 +12,10 @@ namespace Lab4
 
         public Tasks67(byte h, byte m)
         {
-            if (h > 23 || m > 59) throw new ArgumentException();
+            if (h > 23 || m > 59)
+            {
+                throw new ArgumentException();
+            }
             hours = h;
             minutes = m;
         }
@@ -22,14 +25,21 @@ namespace Lab4
         public static Tasks67 operator +(Tasks67 t1, Tasks67 t2)
         {
             int diff = (t1.hours * 60 + t1.minutes) + (t2.hours * 60 + t2.minutes);
-            if (diff < 0) diff += 1440;
+            if (diff < 0)
+            {
+                diff += 1440;
+            }
             return new Tasks67((byte)(diff / 60), (byte)(diff % 60));
         }
 
         public static Tasks67 operator -(Tasks67 t1, Tasks67 t2)
         {
             int diff = (t1.hours * 60 + t1.minutes) - (t2.hours * 60 + t2.minutes);
-            if (diff < 0) diff += 1440;
+            if (diff < 0)
+            {
+                diff += 1440;
+            }
+
             return new Tasks67((byte)(diff / 60), (byte)(diff % 60));
         }
 
