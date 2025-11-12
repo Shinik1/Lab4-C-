@@ -8,7 +8,7 @@ namespace Lab4
 {
     internal class check
     {
-        // Методы для проверки ввода
+       
         public int ReadInt(string message)
         {
             while (true)

@@ -15,11 +15,11 @@ class Program
 
             switch (taskNumber)
             {
-                case "1": // Задание 1
+                case "1": 
                     {
                         Console.WriteLine("=== Удаление повторяющихся элементов ===");
 
-                        // Создаем List 
+                       
                         List<int> numbers = new List<int>();
 
                     
@@ -33,13 +33,13 @@ class Program
                             numbers.Add(input);
                         }
 
-                        // Выводим исходный список
+                        
                         Console.WriteLine("\nИсходный список: " + string.Join(", ", numbers));
 
-                        // Удаляем дубликаты
+                        
                         List<int> result = Tasks15.RemoveDup(numbers);
 
-                        // Выводим результат
+                        
                         Console.WriteLine("Список без дубликатов: " + string.Join(", ", result));
                         break;
                     }
@@ -47,7 +47,7 @@ class Program
                     {
                         Console.WriteLine("=== LinkedList - Обмен соседей ===");
 
-                        // Создаем LinkedList и вводим 7 чисел
+                        
                         LinkedList<int> list = new LinkedList<int>();
 
                         Console.WriteLine("Введите 7 чисел:");
@@ -58,20 +58,19 @@ class Program
                         }
                  
                         List<HashSet<string>> workers = new List<HashSet<string>>();
-                        // Вводим значение E
+                       
                         int E = check.ReadInt("Введите значение E: ");
 
-                        // Выводим исходный список
+                       
                         Console.Write("\nИсходный список: ");
                         foreach (int num in list)
                         {
                             Console.Write(num + " ");
                         }
 
-                        // Вызываем метод для обмена соседей
                         Tasks15.SwapNeighbors(list, E);
 
-                        // Выводим результат
+                        
                         Console.Write("\nПосле обмена: ");
                         foreach (int num in list)
                         {
@@ -114,14 +113,14 @@ class Program
                         Console.WriteLine("=== Первые буквы слов из файла ===");
                         string filePath = "Text4.txt";
 
-                        // Читаем текст из файла
+                        
                         string text = File.ReadAllText(filePath);
                         Console.WriteLine($"\nТекст из файла:\n{text}");
 
-                        // Получаем первые буквы слов
+                        
                         HashSet<char> firstLetters = Tasks15.GetFirstL(text);
 
-                        // Выводим результат
+                        
                         Console.WriteLine("\nСлова начинаются с букв: " + string.Join(", ", firstLetters));
                         break;
                     }
