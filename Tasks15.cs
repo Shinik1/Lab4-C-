@@ -6,53 +6,51 @@ using System.Threading.Tasks;
 
 namespace Lab4
 {
-    internal class Tasks15
-    {
-        
-        public static List<int> RemoveDup(List<int> list)
-        {
-            List<int> result = new List<int>();
+   internal class Tasks15
+   {
 
-            foreach (int number in list)
-            {
-                
-                if (!result.Contains(number))
-                {
-                    result.Add(number);
-                }
-            }
+       public static List<T> RemoveDup<T>(List<T> list)
+       {
+           List<T> result = new List<T>();
 
-            return result;
-        }
+           foreach (T number in list)
+           {
+               
+               if (!result.Contains(number))
+               {
+                   result.Add(number);
+               }
+           }
 
+           return result;
+       }
+
+       public static void SwapNeighbors<T>(LinkedList<T> list, T e)
+       {
        
-        public static void SwapNeighbors(LinkedList<int> list, int E)
-        {
-        
-            LinkedListNode<int> current = list.First;
+           LinkedListNode<T> current = list.First;
 
-            while (current != null)
-            {
+           while (current != null)
+           {
+               
+               if (current.Value.Equals(e))
+               {
                 
-                if (current.Value == E)
-                {
-                 
-                    LinkedListNode<int> left = current.Previous;
-                    LinkedListNode<int> right = current.Next;
+                   LinkedListNode<T> left = current.Previous;
+                   LinkedListNode<T> right = current.Next;
 
-                   
-                    if (left != null && right != null && left.Value != right.Value)
-                    {
-                        
-                        int x = left.Value;
-                        left.Value = right.Value;
-                        right.Value = x;
-                    }
-                }
+                  
+                   if (left != null && right != null && !left.Value.Equals(right.Value))
+                   {
+                       T x = left.Value;
+                       left.Value = right.Value;
+                       right.Value = x;
+                   }
+               }
 
-                current = current.Next;
-            }
-        }
+               current = current.Next;
+           }
+       }
 
         public static void AnalyzeLanguages(List<HashSet<string>> workers, string[] allLanguages)
         {
@@ -135,3 +133,4 @@ namespace Lab4
     }
    
 }
+
